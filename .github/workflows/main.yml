@@ -1,0 +1,28 @@
+name: Tracker
+
+on:
+  push:
+    branches: main
+  schedule:
+  - cron: "*/5 * * * *"
+      
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout main
+      uses: actions/checkout@v2
+      with:
+        ref: main
+
+    - name: Run Tracker
+      env:
+        QQ_NUMBER: ${{ secrets.QQ_NUMBER }}
+        QQ_SMPT_PASSWD: ${{ secrets.QQ_SMPT_PASSWD }}
+        TO_MAIL: ${{ secrets.TO_MAIL }}
+        TARGET_STEAM_ID: ${{ secrets.TARGET_STEAM_ID }}
+        TOKEN: ${{ secrets.TOKEN }}
+      run: |
+        python3 tracker.py "$QQ_NUMBER" "$QQ_SMPT_PASSWD" "$TO_MAIL" "$TARGET_STEAM_ID" "$TOKEN"
