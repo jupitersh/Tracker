@@ -11,7 +11,7 @@
 | `QQ_NUMBER` | 你的QQ号 | `1209626343`
 | `QQ_SMPT_PASSWD` | 你的QQ邮箱的SMTP密码 | `dxxdasdcxfeghbvb5xz` |
 | `TARGET_STEAM_ID` | 要追踪的人STEAM ID | `76561198204009266` |
-| `TOKEN` | Klei Token 获取方法见下文 | `pcl-usc^KU_aUxMQjy7^DontStarveTogether^`<br>`rCTaArNuSx3tPzjquadxMQ/hs6j+InnOvHPWeO6EW6Y=` |
+| `TOKEN` | Klei Token 获取方法见下文 | `pcl-usc^KU_aUxMQjy7^DontStarveTogether^rCT`<br>`aArNuSx3tPzjquadxMQ/hs6j+InnOvHPWeO6EW6Y=` |
 | `TO_MAIL` | 要通知的邮箱 | `1209626343@qq.com` |
 
 添加完成后如下图
@@ -21,6 +21,8 @@
 获取 `TOKEN` 的方法
 
 打开饥荒联机版，在如下界面的控制台内输入 `print(TheFrontEnd:GetAccountManager():GetToken())`，然后别关游戏，打开 `文档\Klei\DoNotStarveTogether\client_log.txt`，在最下面可以找到类似 `pcl-usc^KU_aUxMQjy7^DontStarveTogether^rCTaArNuSx3tPzjquadxMQ/hs6j+InnOvHPWeO6EW6Y=` 的字段就是 `TOKEN`
+
+该方法获得的 `TOKEN` 几小时候后会失效，可以向 Klei 索取永久的 `TOKEN`
 
 ![](/img/dst.png)
 
