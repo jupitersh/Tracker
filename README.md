@@ -26,4 +26,12 @@
 
 ![](/img/2.png)
 
-设置好后打开 `README.md` 在最后面随便添加一个字符并 `Commit change` 即可(因为 `GitHub Actions` 的 `cron` 定时任务在仓库 `fork` 后不会开启，需要手动 `commit` 一次后才生效)
+设置好后打开，修改 `.github/workflows/main.yml`，找到下面的段落，将 `#` 号去掉即可
+
+```
+on:
+  push:
+    branches: main
+  #schedule:
+  #- cron: "*/5 * * * *"
+```
