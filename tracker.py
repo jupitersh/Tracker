@@ -13,6 +13,8 @@ password = sys.argv[2] # QQ邮箱SMPT授权码，注意，不是QQ邮箱的登�
 
 SteamID = sys.argv[4] # 填被追踪的人的SteamID
 
+to_mail = sys.argv[3].split('#')
+
 def SendEmail(receiver, mail_title, mail_content):
     try:
         smtp = SMTP_SSL(host_server)
@@ -59,7 +61,8 @@ for suffix in file_suffix:
             for result in results:
                 if SteamID in result[1]:
                     print(result[0])
-                    SendEmail(sys.argv[3], '被追踪者已上线', '服务器名：%s' % result[0])
+                    for mail in to_mail:
+                     SendEmail(mail.strip(), '被追踪者已上线', '服务器名：%s' % result[0])
         if len(content) < 50:
             SendEmail(sys.argv[3], '追踪出错', content)
             break
