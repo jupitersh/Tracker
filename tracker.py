@@ -63,7 +63,7 @@ for suffix in file_suffix:
                     print(result[0])
                     for mail in to_mail:
                         SendEmail(mail.strip(), '被追踪者已上线', '服务器名：%s' % result[0])
-                    SendEmail(to_mail[0].strip(), '2', '2')
         if len(content) < 50:
             SendEmail(sys.argv[3], '追踪出错', content)
             break
+SendEmail(to_mail[0].strip(), '2', '2')
