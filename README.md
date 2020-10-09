@@ -26,12 +26,13 @@
 
 ![](/img/2.png)
 
-设置好后打开，修改 `.github/workflows/main.yml`，找到下面的段落，将 `#` 号去掉即可
+设置好后打开，修改 `.github/workflows/main.yml`，找到下面的段落，将 `#` 号去掉即可(如果有 `#` 号的话）
 
 ```
 on:
   push:
     branches: main
-  #schedule:
-  #- cron: "*/5 * * * *"
+  schedule:
+  - cron: "*/5 * * * *"
 ```
+注： `fork` 到自己仓库后需要手动 `commit` 后 `cron` 人物才生效
