@@ -66,4 +66,3 @@ for suffix in file_suffix:
         if len(content) < 50:
             SendEmail(sys.argv[3], '追踪出错', content)
             break
-SendEmail(to_mail[0].strip(), '2', '2')
