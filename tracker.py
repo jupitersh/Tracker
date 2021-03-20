@@ -66,4 +66,3 @@ for suffix in file_suffix:
         if len(content) < 50:
             SendEmail(sys.argv[3], '追踪出错', content)
             break
-os.system('curl -d "msg=%s" %s >/dev/null 2>&1' % (sys.argv[5], 'http://ali.peppernotes.top:2333/send'))
